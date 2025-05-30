@@ -20,8 +20,22 @@ function Home() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("Form submitted:", FormData);
-        alert("Form submited, check the console!");
+
+        fetch('http://localhost:5000/save',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(FormData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("success:", data);
+            alert("Data saved to the json file!");
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
     }
 
     return (
