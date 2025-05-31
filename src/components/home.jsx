@@ -7,6 +7,7 @@ function Home() {
         othernames: '',
         date_of_birth: '',
         email: '',
+        profile_image: '',
         gender: ''
     })
 
@@ -54,6 +55,7 @@ function Home() {
                 <option value="">I Prefer Not To Say</option>
             </select>
             <input type="text" name="email" placeholder="Enter email" value={FormData.email} onChange={handleChange}/>
+            <input type="file" accept="image/*"name="profile_image" value={FormData.profile_image} onChange={handleChange}/>
             <button type="submit">Save</button>
         </div>
          </form>
