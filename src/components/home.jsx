@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Home() {
 
-    const [FormData, setFormData] = useState({
+    const [formData, setFormData] = useState({
         sir_name: '',
         othernames: '',
         date_of_birth: '',
@@ -12,22 +12,31 @@ function Home() {
     })
 
     function handleChange(event) {
-        const {name, value} = event.target;
+        const {name, type, value, files} = event.target;
         setFormData(preData => ({
             ...preData,
-            [name]: value
+            [name]: type === 'file' ? files[0] : value
         }))
     }
 
     function handleSubmit(event) {
         event.preventDefault();
 
+        const data = new FormData();
+        for(let key in formData){
+            data.append(key, formData[key])
+        }
+        // const formData = new FormData();
+        // formData.append("sir_name", FormData.sir_name);
+        // formData.append("othernames", FormData.othernames);
+        // formData.append("date_of_birth", FormData.date_of_birth);
+        // formData.append("email", FormData.email);
+        // formData.append("gender", FormData.gender);
+        // formData.append("profile_image", FormData.profile_image);
+
         fetch('http://localhost:5000/save',{
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(FormData),
+            body: data
         })
         .then(response => response.json())
         .then(data => {
@@ -55,10 +64,10 @@ function Home() {
                 <option value="">I Prefer Not To Say</option>
             </select>
             <input type="text" name="email" placeholder="Enter email" value={FormData.email} onChange={handleChange}/>
-            <input type="file" accept="image/*"name="profile_image" value={FormData.profile_image} onChange={handleChange}/>
+            <input type="file" accept="image/*"name="profile_image" onChange={handleChange}/>
             <button type="submit">Save</button>
-        </div>
-         </form>
+            </div>
+        </form>
         
        </div>
     )
