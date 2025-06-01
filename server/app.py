@@ -1,44 +1,46 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import json
-import smtplib
-from email.mime.text import MIMEText
 import os
+import json
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 CORS(app)
 
 DATA_FILE = 'data.json'
+UPLOAD_FOLDER = 'images'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, 'w') as f:
         json.dump([], f)
 
-def send_email(to_email, sir_name):
-    from_email = 'adidabarackpilly@gmail.com'
-    app_password = 'adida2601'
-
-    subject = "Registration Successful"
-    body = f"Dear {sir_name},\n\nYou have been successfully registered to Enrollix. Thank you!"
-
-    msg = MIMEText(body)
-    msg['Subject'] = subject
-    msg['From'] = from_email
-    msg['To'] = to_email
-
-    try:
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(from_email, app_password)
-            server.sendmail(from_email, to_email, msg.as_string())
-            print(f"✅ Email sent to {to_email}")
-            return True
-    except Exception as e:
-        print(f"❌ Failed to send email: {e}")
-        return False
+if not os.path.exists(UPLOAD_FOLDER):
+    os.mkdirs(UPLOAD_FOLDER)
 
 @app.route('/save', methods=['POST'])
 def save_data():
-    new_entry = request.get_json()
+    sir_name = request.form.get('sir_name')
+    othernames = request.form.get('othernames')
+    date_of_birth = request.form.get('date_of_birth')
+    email = request.form.get('email')
+    gender = request.form.get('gender')
+
+    image_file = request.files.get('profile_image')
+    image_filename = secure_filename(image_file.filename)
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
+    image_file.save(image_path)
+
+    new_entry = {
+        "sir_name": sir_name,
+        "othernames": othernames,
+        "date_of_birth": date_of_birth,
+        "email": email,
+        "gender": gender,
+        "profile_image": image_filename
+    }
 
     with open(DATA_FILE, 'r') as f:
         data = json.load(f)
@@ -48,12 +50,7 @@ def save_data():
     with open(DATA_FILE, 'w') as f:
         json.dump(data, f, indent=4)
 
-    email_sent = send_email(new_entry['email'], new_entry['sir_name'])
-
-    if email_sent:
-        return jsonify({"message": "Data saved and email sent successfully"}), 200
-    else:
-        return jsonify({"message": "Data saved, but email failed"}), 500
+    return jsonify({"message": "Data saved successfully!"}), 200
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
