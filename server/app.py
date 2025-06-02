@@ -52,5 +52,11 @@ def save_data():
 
     return jsonify({"message": "Data saved successfully!"}), 200
 
+@app.route('/data', methods=['GET'])
+def get_data():
+    with open('data.json', r) as f:
+        data = json.load(f)
+    return jsonify(data)
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
