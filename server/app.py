@@ -20,6 +20,12 @@ if not os.path.exists(DATA_FILE):
 if not os.path.exists(UPLOAD_FOLDER):
     os.mkdirs(UPLOAD_FOLDER)
 
+@app.route('/save', methods=['GET'])
+def get_data():
+    with open('data.json') as f:
+        data = json.load(f)
+    return jsonify(data)
+
 @app.route('/save', methods=['POST'])
 def save_data():
     sir_name = request.form.get('sir_name')
@@ -51,12 +57,6 @@ def save_data():
         json.dump(data, f, indent=4)
 
     return jsonify({"message": "Data saved successfully!"}), 200
-
-@app.route('/data', methods=['GET'])
-def get_data():
-    with open('data.json', r) as f:
-        data = json.load(f)
-    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
