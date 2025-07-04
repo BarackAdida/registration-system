@@ -1,0 +1,21 @@
+/* styles.css */
+#namestable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#namestable thead tr {
+  background-color: #333;
+  color: white;
+}
+
+#namestable th,
+#namestable td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+#namestable tbody tr:hover {
+  background-color: #f0f0f0;
+}

@@ -1,153 +1,34 @@
 [
     {
-        "sir_name": "adida",
-        "othernames": "pilly",
-        "date_of_birth": "2005-06-12",
-        "email": "adida@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Barack",
-        "othernames": "Adida Pilly",
-        "date_of_birth": "2005-06-12",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2006-06-22",
-        "email": "adidaokebe@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2006-06-22",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2006-06-22",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2025-04-30",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2025-04-30",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2025-04-30",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2025-04-30",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2025-04-30",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2025-04-30",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "Adida",
-        "date_of_birth": "2025-04-30",
-        "email": "adidabarackpilly@gmail.com",
-        "gender": "male"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "pilly",
-        "date_of_birth": "2025-05-01",
-        "email": "pillyadida0@gmail.com",
-        "gender": ""
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "pilly",
-        "date_of_birth": "2025-05-01",
-        "email": "pillyadida0@gmail.com",
-        "gender": ""
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "lexicon",
-        "date_of_birth": "2025-05-15",
-        "email": "pillyadida0@gmail.com",
-        "gender": "female"
-    },
-    {
-        "sir_name": "Lapilly",
-        "othernames": "lexicon",
-        "date_of_birth": "2025-05-15",
-        "email": "pillyadida0@gmail.com",
-        "gender": "female"
-    },
-    {
-        "sir_name": "Harley",
-        "othernames": "meme",
-        "date_of_birth": "2025-04-27",
-        "email": "adidaokebe@gmail.com",
-        "gender": ""
-    },
-    {
-        "sir_name": "Mathilda",
-        "othernames": "Hermione",
-        "date_of_birth": "2004-06-12",
-        "email": "mathildahermione@gmail.com",
-        "profile_image": "C:\\fakepath\\MLBB_Mathilda.jpg",
-        "gender": "female"
-    },
-    {
-        "sir_name": null,
-        "othernames": null,
-        "date_of_birth": null,
-        "email": null,
-        "gender": null,
-        "profile_image": null
-    },
-    {
-        "sir_name": null,
-        "othernames": null,
-        "date_of_birth": null,
-        "email": null,
-        "gender": null,
-        "profile_image": null
-    },
-    {
         "sir_name": "Lapilly",
         "othernames": "pilly",
         "date_of_birth": "2006-06-06",
         "email": "adidaokebe@gmail.com",
         "gender": "male",
         "profile_image": "MLBB_Mathilda.jpg"
+    },
+    {
+        "sir_name": "Lapilly",
+        "othernames": "Adida",
+        "date_of_birth": "2025-07-09",
+        "email": "adidaokebe@gmail.com",
+        "gender": "male",
+        "profile_image": "Screenshot_From_2025-05-22_23-13-53.png"
+    },
+    {
+        "sir_name": "Kichwa",
+        "othernames": "Bigi",
+        "date_of_birth": "2025-07-06",
+        "email": "alala@gmail.com",
+        "gender": "female",
+        "profile_image": "Screenshot_From_2025-06-23_20-01-13.png"
+    },
+    {
+        "sir_name": "Lumbasi",
+        "othernames": "Wabomba",
+        "date_of_birth": "2005-06-12",
+        "email": "lumbasiwabomba@gmail.com",
+        "gender": "male",
+        "profile_image": "Screenshot_From_2025-05-24_22-25-12.png"
     }
 ]

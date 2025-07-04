@@ -26,14 +26,6 @@ function Home() {
         for(let key in formData){
             data.append(key, formData[key])
         }
-        // const formData = new FormData();
-        // formData.append("sir_name", FormData.sir_name);
-        // formData.append("othernames", FormData.othernames);
-        // formData.append("date_of_birth", FormData.date_of_birth);
-        // formData.append("email", FormData.email);
-        // formData.append("gender", FormData.gender);
-        // formData.append("profile_image", FormData.profile_image);
-
         fetch('http://localhost:5000/save',{
             method: 'POST',
             body: data
